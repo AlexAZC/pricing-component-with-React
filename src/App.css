@@ -1,38 +1,330 @@
-.App {
+
+:root{
+    
+  /* ### Primary */
+    
+--Linear-Gradient: hsl(236, 72%, 79%);
+--purple-one: hsl(237, 63%, 64%);
+
+  /* ### Neutral */
+
+--Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+--Light-Grayish-Blue: hsl(234, 14%, 74%);
+--Grayish-Blue: hsl(233, 13%, 49%);
+--Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+
+/*  ### Body Copy
+
+  - Font size: 15px */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../pricing-component-with-toggle-master/images/bg-bottom.svg),
+                    url(../pricing-component-with-toggle-master/images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position:left bottom, right top;
+
+}
+
+.head{
   text-align: center;
+  margin-top: 6rem ;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.head h1{
+  color: var(--Grayish-Blue);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.options{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.7rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.options p {
+  color: var(--Light-Grayish-Blue);
+}
+
+.options label{
+  margin: 1rem 1.4rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--Linear-Gradient);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--purple-one);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--purple-one);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.allCards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardbox{
+  width: 420px;
+  height: 500px;
+  background-color: white;
+  box-shadow: var(--Linear-Gradient) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  font-size: 15px;
+  color:var(--Grayish-Blue)
+}
+
+.cardbox:nth-child(2){
+  width: 420px;
+  height: auto;
+  background-color: var(--purple-one);
+  box-shadow: var(--Linear-Gradient) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding: 55px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  color: white
+}
+
+.cardbox:nth-child(2) .price{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cardbox:nth-child(2) button:hover {
+  color: var(--purple-one);
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardbox:nth-child(2) button:active {
+  color: var(--purple-one);
+  background-color: white;
+  cursor: pointer;
 }
+
+.cardbox button:hover{
+  color: var(--purple-one);
+  background-color: white;
+  border: 1px solid var(--purple-one);
+  cursor: pointer;
+}
+
+cardbox button:active{
+  color: var(--purple-one);
+  background-color: white;
+  border: 1px solid var(--purple-one);
+  cursor: pointer;
+}
+
+.cardbox .price {
+  font-size: 80px;
+  margin: 13px 0 25px;
+  color: var(--Dark-Grayish-Blue);
+}
+
+.cardbox .price span {
+  font-size: 50px;
+}
+
+.cardbox p {
+  padding: 15px;
+  border: solid var(--Light-Grayish-Blue);
+  border-width: 0 0 1px 0;
+  margin: 2px 0;
+}
+
+.cardbox p:first-child {
+  border: none;
+}
+
+.cardbox .second{
+  border: solid var(--Light-Grayish-Blue);
+  border-width: 1px 0 1px 0;
+}
+
+
+.cardbox button {
+  padding: 15px;
+  margin-top: 35px;
+  background-color: var(--purple-one);
+  border: 1px solid var(--Linear-Gradient);
+  border-radius: 5px;
+  color: white ;
+}
+
+
+@media all and (max-width:1300px){
+
+  .allCards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 0;
+  }
+
+  .cardbox:nth-child(2){
+    width: 420px;
+    height: 500px;
+    background-color: var(--purple-one);
+    box-shadow: var(--Linear-Gradient) 0px 7px 29px 0px;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+  }
+
+  main{
+    width: auto;
+    height: auto;
+    padding: 0 0 90px;
+    background-image: url(../pricing-component-with-toggle-master/images/bg-bottom.svg),
+                    url(../pricing-component-with-toggle-master/images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position:-15% bottom, 125% top;
+  }
+
+}
+
+@media all and (max-width:500px){
+
+  .allCards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 0;
+  }
+
+  .cardbox:nth-child(2){
+    width: 360px;
+    height: 500px;
+    background-color: var(--purple-one);
+    box-shadow: var(--Linear-Gradient) 0px 7px 29px 0px;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+  }
+
+  main{
+    width: auto;
+    height: auto;
+    padding: 0 0 90px;
+    background-image: url(../pricing-component-with-toggle-master/images/bg-bottom.svg),
+                    url(../pricing-component-with-toggle-master/images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position:-185% bottom, 385% top;
+  }
+
+  .cardbox{
+    width: 360px;
+    height: 500px;
+    background-color: white;
+    box-shadow: var(--Linear-Gradient) 0px 7px 29px 0px;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    color:var(--Grayish-Blue)
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
