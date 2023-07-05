@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pricing-component-with-React/static/css/main.74190f16.css",
+    "main.js": "/pricing-component-with-React/static/js/main.4b28bd08.js",
+    "index.html": "/pricing-component-with-React/index.html",
+    "static/media/bg-bottom.svg": "/pricing-component-with-React/static/media/bg-bottom.0ed1debdb05aee57e642.svg",
+    "static/media/bg-top.svg": "/pricing-component-with-React/static/media/bg-top.4980c1fd1180f71d5782.svg",
+    "main.74190f16.css.map": "/pricing-component-with-React/static/css/main.74190f16.css.map",
+    "main.4b28bd08.js.map": "/pricing-component-with-React/static/js/main.4b28bd08.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74190f16.css",
+    "static/js/main.4b28bd08.js"
+  ]
+}
